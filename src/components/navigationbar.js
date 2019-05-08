@@ -11,14 +11,24 @@ class Navigationbar extends React.Component{
         super();
         this.state={
             title: 'Word Puzzle',
+            isDisplayed: true
         }
     }
+
+    handleDisplay(e){
+      e.preventDefault();
+
+      this.setState({
+        isDisplayed: !this.state.isDisplayed
+      })
+    }
     render(){
+      const {isDisplayed} = this.state;
         return(
            
         <div>
         <Navbar bg="light" expand="lg">
-            <Navbar.Brand href="#home" style={{color: '#d58c0d'}}>{this.state.title.toUpperCase()}</Navbar.Brand>
+            <Navbar.Brand href="#home" style={{color: '#d58c0d', fontWeight: "bold"}}>{this.state.title.toUpperCase()}</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
@@ -48,9 +58,9 @@ class Navigationbar extends React.Component{
          <Card className="bg-dark text-white" style={{height: 450}}>
             <Card.Img src={Mouse} alt="Card image" style={{opacity: .4}}/>
             <Card.ImgOverlay style={{textAlign: 'center', marginTop: '3%', paddingTop: '7%'}}>
-                <Card.Title>ADVANCE YOUR KNOWLEDGE</Card.Title>
+                <Card.Title><h2>ADVANCE YOUR KNOWLEDGE</h2></Card.Title>
                 <Card.Text>
-                   <h4> Enjoy the school exercise <span style={{color: '#d58c0d'}}>GAME</span></h4>
+                  <p></p> Enjoy the school exercise <span style={{color: '#d58c0d'}}>GAME</span>
                 </Card.Text>
                 <input type='text' name="signin" /><br/><br/>
                 <Button variant="primary" style={{color: '#d58c0d', background: 'transparent'}}>Signin to start the GAME</Button>
@@ -60,17 +70,17 @@ class Navigationbar extends React.Component{
          </div>
          <div>
          <Card className="text-center">
-  <Card.Header>Featured</Card.Header>
+  <Card.Header>(GRAMMAR | ARITHMETIC | GEOMETRY) ZONE</Card.Header>
   <Card.Body>
     <Card.Title>Special title treatment</Card.Title>
     <Card.Text>
       With supporting text below as a natural lead-in to additional content.
     </Card.Text>
-    <Button variant="primary">Tutorials</Button>
-  </Card.Body>
+    <Button variant="primary" onClick={(e) => this.handleDisplay(e)}>Tutorials</Button>
+  </Card.Body> 
   <Card.Footer className="text-muted">
 
-  <CardGroup>
+  <CardGroup className={`text-muted ${isDisplayed ? 'is-displayed' : ''}`}>
   <Card >
     <Card.Img variant="top" src={Mouse4}  style={{height:200}}/>
     <Card.Body>
