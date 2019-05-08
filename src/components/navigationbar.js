@@ -1,10 +1,10 @@
 import React from 'react';
-import {Navbar, Nav, NavDropdown, Form, FormControl, Button, CardGroup} from 'react-bootstrap';
+import {Navbar, Nav, Form, FormControl, Button, CardGroup} from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import Mouse from '../images/Mouse-icon-for-web.png';
-import Mouse2 from '../images/dell-mouse.jpeg';
-import Mouse3 from '../images/dell-mouse.jpeg';
-import Mouse4 from '../images/dell-mouse.jpeg';
+import Mouse2 from '../images/geometry.jpg';
+import Mouse3 from '../images/grammer.png';
+import Mouse4 from '../images/Arithmetic_symbols.svg.png';
 
 class Navigationbar extends React.Component{
     constructor(){
@@ -60,9 +60,9 @@ class Navigationbar extends React.Component{
             <Card.ImgOverlay style={{textAlign: 'center', marginTop: '3%', paddingTop: '7%'}}>
                 <Card.Title><h2>ADVANCE YOUR KNOWLEDGE</h2></Card.Title>
                 <Card.Text>
-                  <p></p> Enjoy the school exercise <span style={{color: '#d58c0d'}}>GAME</span>
+                  Enjoy the school exercise <span style={{color: '#d58c0d'}}>GAME</span>
                 </Card.Text>
-                <input type='text' name="signin" /><br/><br/>
+                
                 <Button variant="primary" style={{color: '#d58c0d', background: 'transparent'}}>Signin to start the GAME</Button>
             </Card.ImgOverlay>
             </Card>
@@ -70,7 +70,7 @@ class Navigationbar extends React.Component{
          </div>
          <div>
          <Card className="text-center">
-  <Card.Header>(GRAMMAR | ARITHMETIC | GEOMETRY) ZONE</Card.Header>
+  <Card.Header>GRAMMAR | ARITHMETIC | GEOMETRY</Card.Header>
   <Card.Body>
     <Card.Title>Special title treatment</Card.Title>
     <Card.Text>
@@ -84,7 +84,7 @@ class Navigationbar extends React.Component{
   <Card >
     <Card.Img variant="top" src={Mouse4}  style={{height:200}}/>
     <Card.Body>
-      <Card.Title>Card title</Card.Title>
+      <Card.Title>Arithmetic</Card.Title>
       <Card.Text>
         This is a wider card with supporting text below as a natural lead-in to
         additional content. This content is a little bit longer.
@@ -97,7 +97,7 @@ class Navigationbar extends React.Component{
   <Card>
     <Card.Img variant="top" src={Mouse3} style={{height:200}}/>
     <Card.Body>
-      <Card.Title>Card title</Card.Title>
+      <Card.Title>Grammer</Card.Title>
       <Card.Text>
         This card has supporting text below as a natural lead-in to additional
         content.{' '}
@@ -110,7 +110,7 @@ class Navigationbar extends React.Component{
   <Card>
     <Card.Img variant="top" src={Mouse2} style={{height:200}}/>
     <Card.Body>
-      <Card.Title>Card title</Card.Title>
+      <Card.Title>Geometry</Card.Title>
       <Card.Text>
         This is a wider card with supporting text below as a natural lead-in to
         additional content. This card has even longer content than the first to
