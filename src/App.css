@@ -15,4 +15,14 @@
 }
 .is-displayed{
   display: block;
+ 
+}
+.card-item{
+  opacity: .8;
+}
+.card-item:hover{
+  transition: transform .8s;
+  z-index: 2;
+  transform: scale(1.05);
+  box-shadow: 4px 4px 4x 4px;
 }
