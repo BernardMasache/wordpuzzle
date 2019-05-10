@@ -1,7 +1,6 @@
 import React from 'react';
 import {Navbar, Nav, Form, Button, CardGroup} from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
-import Modal from 'react-bootstrap/Modal';
 import Mouse from '../images/Mouse-icon-for-web.png';
 import Mouse2 from '../images/geometry.jpg';
 import Mouse3 from '../images/grammer.png';
@@ -10,42 +9,34 @@ import Mouse4 from '../images/Arithmetic_symbols.svg.png';
 class Navigationbar extends React.Component{
     constructor(props, context){
         super(props, context);
-        this.handleShow = this.handleShow.bind(this);
-        this.handleClose = this.handleClose.bind(this);
+       
         this.state={
             title: 'Word Puzzle',
             isDisplayed: true,
             show: false,
+            
         }
 
         
     }
-    handleClose() {
-      this.setState({ show: false });
-    }
-  
-    handleShow() {
-      this.setState({ show: true });
-    }
 
-    handleDisplay(e){
-      e.preventDefault();
-
-      this.setState({
-        isDisplayed: !this.state.isDisplayed
-      })
-    }
+    
+    
     render(){
       const {isDisplayed} = this.state;
+      const colour = '#d58c0d';
+      const fWeight = 'bold';
+     
+
         return(
            
         <div>
         <Navbar bg="light" expand="lg">
-            <Navbar.Brand href="#home" style={{color: '#d58c0d', fontWeight: "bold"}}>{this.state.title.toUpperCase()}</Navbar.Brand>
+            <Navbar.Brand href="#home" style={{color: colour, fontWeight: fWeight}}>{this.state.title.toUpperCase()}</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                <Nav.Link href="#home">Home</Nav.Link>
+                <Nav.Link href="#home" style={{color:'#135f6d', fontWeight:'bold'}}>Home</Nav.Link>
                 
                 {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                     <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
@@ -56,7 +47,7 @@ class Navigationbar extends React.Component{
                 </NavDropdown> */}
                 </Nav>
                 <Form inline>
-                <Nav.Link to="#register">Register</Nav.Link>
+                <Nav.Link to="#register" style={{color: colour, fontWeight: fWeight}}>Register</Nav.Link>
                 </Form>
             </Navbar.Collapse>
             </Navbar>
@@ -73,28 +64,8 @@ class Navigationbar extends React.Component{
                 <Card.Text>
                   Enjoy the school exercise <span style={{color: '#d58c0d'}}>GAME</span>
                 </Card.Text>
-
-                <Button variant="primary" onClick={this.handleShow}  style={{color: '#d58c0d', background: 'transparent'}}> Signin to start the GAME</Button>
-
-                <Modal show={this.state.show} onHide={this.handleClose} style={{textAlign: "center", marginTop:'6.3%', color: '#d58c0d'}}>
-                
-                
-                <Form>
-                  <Form.Group controlId="formBasicEmail">
-                    <Form.Label style={{ fontSize: '5rem', fontFamily: 'fantasy'}}>SIGNIN</Form.Label>
-                    <div style={{marginLeft:'15%', marginRight: '15%'}}>
-                    <Form.Control type="email" placeholder="Enter email" required/><br/>
-                    <Form.Control type="password" placeholder="Enter password" required/>
-                    </div><br/>
-                    <Modal.Footer>
-                  <Button variant="primary" onClick={this.handleClose} style={{background:'transparent', color: '#d58c0d', fontFamily: 'fantasy'}}> Submit </Button>
-                  <Button variant="secondary" onClick={this.handleClose} style={{marginRight:'30%', background:'dark', color: '#fff', fontFamily: 'fantasy'}}> Cancel</Button>
-                </Modal.Footer>
-                  </Form.Group>
-                  </Form>
-          
-                
-              </Modal>
+                   
+                    <Button variant="primary" style={{color: '#d58c0d', background: 'transparent'}}> Signin to start the GAME</Button>
                 
             </Card.ImgOverlay>
             </Card>
@@ -102,14 +73,14 @@ class Navigationbar extends React.Component{
          </div>
          <div>
          <Card className="text-center">
-  <Card.Header>className={`text-muted ${isDisplayed ? 'is-displayed' : ''}`}GRAMMAR | ARITHMETIC | GEOMETRY</Card.Header>
+  <Card.Header className='text-muted'>GRAMMAR | ARITHMETIC | GEOMETRY</Card.Header>
   <Card.Body>
-    <Card.Title>Special title treatment</Card.Title>
-    <Card.Text>
-      With supporting text below as a natural lead-in to additional content.
+    <Card.Text style={{fontSize: '2rem'}}>
+      Take a tour before playing a <span style={{color: '#d58c0d'}}>GAME</span> through our Tutorials
     </Card.Text>
-    <Button variant="primary" onClick={(e) => this.handleDisplay(e)}>Tutorials</Button>
+    {/* <Button variant="primary" onClick={(e) => this.handleDisplay(e)}>Tutorials</Button> */}
   </Card.Body> 
+  <div className={`text-muted ${isDisplayed ? 'is-displayed' : ''}`}>
   <Card.Footer className="text-muted">
   <CardGroup>
   <Card className="card-item">
@@ -155,6 +126,7 @@ class Navigationbar extends React.Component{
 </CardGroup>
 
       </Card.Footer>
+  </div>
 </Card>
          </div>
 
